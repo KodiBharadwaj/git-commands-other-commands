@@ -1,0 +1,5 @@
+## Notes
+
+- Java
+- SQL
+- Git
