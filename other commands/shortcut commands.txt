@@ -75,7 +75,7 @@ docker run --name postgres -e POSTGRES_PASSWORD=pass@word1 --network=spring-boot
 Spring boot app on that n/w:
 docker run -p 8080:8080 --name=todo-app --network=spring-boot-db-network -e POSTGRES_HOST=postgres -e POSTGRES_PORT=5432 -e POSTGRES_DB=postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=pass@word1 -d todo-app
 
-docker logs (to checks the logs)
+docker logs name-of-container (to checks the logs)
 
 
 
