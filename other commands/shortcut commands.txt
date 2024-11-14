@@ -77,5 +77,14 @@ docker run -p 8080:8080 --name=todo-app --network=spring-boot-db-network -e POST
 
 docker logs name-of-container (to checks the logs)
 
+stop & start the docker:
+sotp:
+docker stop todo-app
+docker stop postgres
+
+start: 
+docker start todo-app
+docker start postgres
+
 
 
