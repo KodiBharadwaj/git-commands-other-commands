@@ -64,6 +64,12 @@ docker push kodibharadwaj/spring-boot-app
 
 IntelliJ project building:
 docker build -t todo-app .
+create a Dockerfile and paste it:
+FROM openjdk:21-jdk-slim
+WORKDIR /
+ADD target/*.jar app.jar
+CMD ["java", "-jar", "app.jar"]
+
 
 Run spring boot with database on docker:
 create docker network: 
@@ -85,6 +91,78 @@ docker stop postgres
 start: 
 docker start todo-app
 docker start postgres
+
+docker-composer:
+docker compose config
+docker compose up 
+docker compose down
+
+
+Install Docker & Docker composer in AWS and run it:
+sudo yum install docker -y
+
+sudo service docker start 
+
+sudo usermod -a -G docker ec2-user
+
+sudo docker pull kodibharadwaj/todo-app
+
+sudo docker pull postgres
+
+sudo docker images (to check)
+
+nano docker-compose.yml
+and paste it 
+
+sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+sudo docker-compose version
+
+sudo docker-compose config
+
+sudo docker-compose up -d or sudo docker-compose up -d --no-build
+
+
+docker-compose.yml file should like this:
+
+version: '3.7'
+
+services:
+
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+    networks:
+      - app-network
+
+  todo-app:
+    image: kodibharadwaj/todo-app:latest  # Corrected image reference
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_USER: postgres  # Ensure these match PostgreSQL environment
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+
+networks:
+  app-network:
+    driver: bridge
+
+
 
 
 
