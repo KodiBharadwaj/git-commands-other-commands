@@ -27,7 +27,7 @@ c) git push -u origin main/master or simply git push
 
 
 
-aws:
+Run spring boot app Jar file in amazon cli:
 install git in aws cli: sudo yum install git -y
 install java in cli: sudo yum install java-21-amazon-corretto-headless -y
 install maven in cli: sudo yum install maven -y
@@ -39,7 +39,43 @@ to upload jar file in aws cli:
 scp -i "ust-ec2-key.pem" trainee-app.jar ec2-user@54.147.170.59:/home/ec2-user
 
 
-
+Postgres:
 postgres query to fetch all the table names in a database:
 SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';
+
+
+
+
+Docker:
+To see container: docker ps & docker ps -a
+To see the images: docker images
+run the docker: docker run -p 3309:3306 -e MYSQL_ROOT_PASSWORD=password --name mysql-container -d mysq
+execute it: docker exec -it mysql-container bash
+then: mysql -u root -p
+Now Enter the password.
+
+Pull the images: docker pull imgage-name
+Run the respective image: docker run -p 3000:80 --name easy-recipes ram1uj/easy-recipes
+
+Push repository into the docker hub:
+docker login
+docker tag spring-boot-app kodibharadwaj/spring-boot-app
+docker push kodibharadwaj/spring-boot-app
+
+IntelliJ project building:
+docker build -t todo-app .
+
+Run spring boot with database on docker:
+create docker network: 
+docker network create some-name
+
+run postgres/MySQL on that n/w:
+docker run --name postgres -e POSTGRES_PASSWORD=pass@word1 --network=spring-boot-db-network -d -p 5432:5432 postgres
+
+Spring boot app on that n/w:
+docker run -p 8080:8080 --name=todo-app --network=spring-boot-db-network -e POSTGRES_HOST=postgres -e POSTGRES_PORT=5432 -e POSTGRES_DB=postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=pass@word1 -d todo-app
+
+docker logs (to checks the logs)
+
+
 
