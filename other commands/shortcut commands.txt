@@ -45,6 +45,10 @@ SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';
 
 
 
+Check Port and stop:
+netstat -aon | findstr :<port_number>
+taskkill /PID <PID_number> /F
+
 
 Docker:
 To see container: docker ps & docker ps -a
@@ -107,7 +111,7 @@ sudo usermod -a -G docker ec2-user
 
 sudo docker pull kodibharadwaj/todo-app
 
-sudo docker pull postgres
+sudo docker pull postgres(no need of pulling if we user docker-compose.yml file)
 
 sudo docker images (to check)
 
