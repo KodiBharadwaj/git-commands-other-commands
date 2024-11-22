@@ -12,7 +12,13 @@ create angular app: ng new "name"
 run the file: ng serve
 create a component: ng g c "name"
 to build files(used to upload in cloud for deployment): ng build
+to create services: ng g s "name"
 
+mongodb:
+to start mongo database: mongod
+
+switch database: use db
+to read collections: db.collectionName.find()
 
 jest:testing
 start: npm init
