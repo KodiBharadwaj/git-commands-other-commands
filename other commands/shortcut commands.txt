@@ -14,6 +14,7 @@ create a component: ng g c "name"
 to build files(used to upload in cloud for deployment): ng build
 to create services: ng g s "name"
 to create guard: ng g g "name"
+to create pipe : ng g p "name"
 
 mongodb:
 to start mongo database: mongod
