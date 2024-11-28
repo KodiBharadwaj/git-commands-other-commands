@@ -15,6 +15,8 @@ to build files(used to upload in cloud for deployment): ng build
 to create services: ng g s "name"
 to create guard: ng g g "name"
 to create pipe : ng g p "name"
+to create interceptor: ng generate interceptor "name"
+to create guard: ng generate guard "name"
 
 mongodb:
 to start mongo database: mongod
