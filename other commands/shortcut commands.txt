@@ -8,6 +8,7 @@ to run : tsc "name".ts && node "name"
 
 
 angular:
+install angular: npm install -g @angular/cli
 create angular app: ng new "name"
 run the file: ng serve
 create a component: ng g c "name"
@@ -34,6 +35,7 @@ git push commands:
 a) git add .
 b) git commit -m "name"
 c) git push -u origin main/master or simply git push
+d) If not pushed try: git remote -v
 
 
 
