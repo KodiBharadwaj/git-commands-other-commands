@@ -3,6 +3,16 @@ node: nodevars
 open visual code studio directly: code . 
 
 
+Open Local running application in mobile:
+-> Mobile and laptop should be in same network
+-> Run frontend with (if angular): ng serve --host 0.0.0.0
+-> Now we will get ex: http://192.168.1.34:4200
+-> Now update this url in @CrossOrigin and security config file in backend
+-> Now in env files in frontend, change the backend url to Ex: BASE_URL : 'http://192.168.1.34:8765'
+-> Simply replace localhost with our local computer ip. 
+-> To know type inconfig in terminal and search for ipv4 Address.
+
+
 typescript:
 to run : tsc "name".ts && node "name"
 
