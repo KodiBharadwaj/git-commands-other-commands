@@ -29,6 +29,14 @@ to create pipe : ng g p "name"
 to create interceptor: ng generate interceptor "name"
 to create guard: ng generate guard "name"
 
+react:
+npx create-react-app name
+if not able to create then follow the steps:
+npm uninstall -g create-react-app
+npx clear-npx-cache (if not able to: npm cache clean --force)
+npx create-react-app@latest name
+
+
 mongodb:
 to start mongo database: mongod
 
@@ -187,6 +195,7 @@ services:
 networks:
   app-network:
     driver: bridge
+
 
 
 
