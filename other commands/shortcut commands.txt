@@ -57,6 +57,13 @@ d) If not pushed try: git remote -v
 
 
 
+postgres:
+-> In order to restore the cloud backup database into our local, First create the db and run this query:
+-> Then restore the db. (when doing back up, it will be in documnets folder -> add .backup name at the end of file name)
+CREATE ROLE best_service_db_user WITH LOGIN PASSWORD 'some_secure_password';
+GRANT ALL PRIVILEGES ON DATABASE your_database TO best_service_db_user;
+
+
 Run spring boot app Jar file in amazon cli:
 install git in aws cli: sudo yum install git -y
 install java in cli: sudo yum install java-21-amazon-corretto-headless -y
@@ -195,6 +202,7 @@ services:
 networks:
   app-network:
     driver: bridge
+
 
 
 
