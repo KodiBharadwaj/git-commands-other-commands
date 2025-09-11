@@ -10,7 +10,7 @@ Open Local running application in mobile:
 -> Now update this url in @CrossOrigin and security config file in backend
 -> Now in env files in frontend, change the backend url to Ex: BASE_URL : 'http://192.168.1.34:8765'
 -> Simply replace localhost with our local computer ip. 
--> To know type inconfig in terminal and search for ipv4 Address.
+-> To know type ipconfig in terminal and search for ipv4 Address.
 
 
 typescript:
@@ -202,6 +202,7 @@ services:
 networks:
   app-network:
     driver: bridge
+
 
 
 
